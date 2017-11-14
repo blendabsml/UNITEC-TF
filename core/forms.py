@@ -1,4 +1,11 @@
 from django import forms
+from django.db import models
+from core.models import *
+
+class CursoForm(forms.ModelForm):
+    class Meta:
+        model = Curso
+        fields = "__all__"
 
 class ContatoForm(forms.Form):
     nome = forms.CharField()
@@ -7,7 +14,7 @@ class ContatoForm(forms.Form):
 
     def envia_email(self):
         print("Email para você: \n" +
-        "Aluno: " + self.nome + "\n" +
-        "Email: " + self.email + "\n" +
-        "Mensagem: " + self.mensagem
+        "Aluno: " + self.cleaned_data["nome"] + "\n" +
+        "Email: " + self.cleaned_data["email"] + "\n" +
+        "Mensagem: " + self.cleaned_data["mensagem"]
         )

@@ -12,17 +12,24 @@
 <body>
 	<header>
 		<div class="menu">
-			<ul><nav>
-				<li><a href="index.html"><img class="home" src="/static/images/Ti.png"></a></li>
-				<li class="menusuperior"><a class="h4" href="ListaCursos.html"><h4>Lista de Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Noticias.html"><h4>Notícias</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Disciplinas.html"><h4>Disciplinas</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="SobreCurso.html"><h4>Sobre Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Contato.html"><h4>Contato</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Login.html"><h4>Login</h4></a></li>
-				</nav>
-			</nav>
-    </header>
+				<ul>
+					<nav>
+						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
+						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
+						{% if not user.is_authenticated %}
+							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
+						{% else %}
+							{{ user }}
+							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
+						{% endif %}
+					</nav>
+				</ul>
+		</div>
+	</header>
 	
 	
 	<center><img class="banner" src="/static/images/banner.png"></center>

@@ -8,80 +8,80 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="#007db7" />
 		<title>UNITEC | Bem Vindo</title>
 		<link rel ="stylesheet" href="/static/css/estilo.css"/>
+		<link rel ="stylesheet" href="/static/css/contato.css"/>
 	</head>
 <body>
 	<header>
 		<div class="menu">
-			<ul><nav>
-				<li><a href="index.html"><img class="home" src="/static/images/Ti.png"></a></li>
-				<li class="menusuperior"><a class="h4" href="ListaCursos.html"><h4>Lista de Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Noticias.html"><h4>Notícias</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Disciplinas.html"><h4>Disciplinas</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="SobreCurso.html"><h4>Sobre Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Contato.html"><h4>Contato</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Login.html"><h4>Login</h4></a></li>
-				</nav>
-			</nav>
-    </header>
+				<ul>
+					<nav>
+						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
+						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
+						{% if not user.is_authenticated %}
+							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
+						{% else %}
+							{{ user }}
+							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
+						{% endif %}
+					</nav>
+				</ul>
+		</div>
+	</header>
+
+	<center class="Fundo"><img class="banner" src="/static/images/banner.png"></center>
+	<center class="corpo-contato"><div class="Form1"><br>	
 	
-	
-	<center><img class="banner" src="/static/images/banner.png"></center>
-	
-	<center><div class="fundo3"><br>	
-	
-	<form>
+	<center > <form>
 
 
-<div class="formularii"><br>
-	<img class="home" src="/static/images/logo.png">	
-	<fieldset class="formularii2">	
-	<legend> CONTATO </legend>
-
-
-	Nome:
-	<input name="Nome" placeholder="Digite seu nome"/>
-	<br/>
-	<br/>
-	R.A:
-	<input name="R.A" placeholder="Digite seu R.A"/>
-	<br/>
-	<br/>
+    <br>	
+	<legend> <center> CONTATO </center> </legend>
+<br> 
+<br> 
+	 Nome: <br>
+	<input type="text" class="CamposForm" placeholder="Digite seu nome"/>
+    
+	<br>
+	<br>
+	Telefone: <br>
+	<input type="text" class="CamposForm" placeholder="Digite seu telefone"/>
+	<br>
+	<br>
+	<label for="input-mail">E-mail: </label> <br>
+	<input type="text" class="CamposForm" placeholder="Digite o email">
 	
-	<label for="input-mail">E-mail: </label>
-	<input class="campo" name="email" placeholder="Digite o email">
-	
-	<br/>
-	<br/>
+	<br>
+	<br>
 
-	Assunto do contato:
-	<select name="assunto" >
+	Assunto do contato: <br>
+	<select name="assunto" class="CamposForm" >
 		<option>Duvidas</option>
 		<option>Opinião</option>
 		<option>Reclamações</option>
 	</select>
 
-	<br/>
-	<br/>
+	<br>
+	<br>
 	
-	Mensagem:</br>
-	<textarea name="Mensagem" class="direita" placeholder="Digite aqui..."></textarea>
+	Mensagem:<br>
+	<textarea name="Mensagem" class="CamposForm"  placeholder="Digite aqui..."></textarea>
 	
-	<br/>
-	<br/>
+	<br>
+	<br>
 
-	<input class="button" type="submit" value="Enviar"/>
-	<button class="button" type="reset">Limpar</button>
+	<input class="button1" type="submit" value="Enviar"/>
+	<button class="button1" type="reset">Limpar</button>
 
+<br>
+<br>
+</form> </center>
 
-
-	</fieldset>
-</div>
-	</div>
-</form>
-
-	</br>
-	</br>
-	</div></center>
+	
+</div></center>
 
 	<footer>
       <p><strong>Universidade de Tecnologia - Todos os Direitos Reservados &copy; 2017</strong></p>

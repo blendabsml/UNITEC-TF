@@ -12,25 +12,32 @@
 <body>
 	<header>
 		<div class="menu">
-			<ul><nav>
-				<li><a href="index.html"><img class="home" src="/static/images/Ti.png"></a></li>
-				<li class="menusuperior"><a class="h4" href="ListaCursos.html"><h4>Lista de Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Noticias.html"><h4>Notícias</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Disciplinas.html"><h4>Disciplinas</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="SobreCurso.html"><h4>Sobre Cursos</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Contato.html"><h4>Contato</h4></a></li>
-				<li class="menusuperior"><a class="h4" href="Login.html"><h4>Login</h4></a></li>
-				</nav>
-			</nav>
-    </header>
+				<ul>
+					<nav>
+						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
+						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
+						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
+						{% if not user.is_authenticated %}
+							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
+						{% else %}
+							{{ user }}
+							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
+						{% endif %}
+					</nav>
+				</ul>
+		</div>
+	</header>
 
 	<center class="Fundo"><img class="banner" src="/static/images/banner.png"></center>
 
 	
 	<center><div class="fundo2"><br><br/>
-		<strong>Cadastrar nova Disciplina </strong><button class="button" name="novadis"><a href="novaDisciplina.html" >Nova</a></button>
+		<strong>Cadastrar nova Disciplina </strong><button class="button" name="novadis"><a href="/admin/core/disciplina/add/" >Nova</a></button>
 
-	<center><br><h1 class="titulos">Análise e Desenvolvimento de Sistemas</h1><br></center>
+	<center><br><h2 class="titulos">Análise e Desenvolvimento de Sistemas</h2><br></center>
 	<center><div class="flex-item">  
 	<p><b>COMUNICAÇÃO E EXPRESSÃO:</b> Redija textos com os princípios de coesão e coerência, objetividade, concisão e clareza, dominando as regras gramaticais, localizando erros e corrigindo-os. Saiba reconhecer e produzir textos empresariais (correio eletrônico, memorandos e relatórios), introduzir as diretrizes para a elaboração de textos objetivos, concisos e claros, sem vícios de linguagem.</p> <br> 
 
@@ -44,7 +51,7 @@
 
 	<p><b>MATEMÁTICA APLICADA:</b> Conheça os conceitos fundamentais de lógica formal, dominando os métodos matemáticos e estatísticos para análise de conjuntos de dados. Saiba quais operações matemáticas devem ser realizadas para tratamento e representação de dados. Além disso, conheça a geração de medidas estatísticas capazes de subsidiar o profissional de informática no entendimento e programação de sistemas que envolvam cálculos. </p> <br> 
 </div>
-	<center><br><h1>Banco de Dados</h1><br></center> 
+	<center><br><h2>Banco de Dados</h2><br></center> 
 <div class="flex-item"> 
 	<p><b>COMUNICAÇÃO E EXPRESSÃO:</b> Redija textos com os princípios de coesão e coerência, objetividade, concisão e clareza, dominando as regras gramaticais, localizando erros e corrigindo-os. Saiba reconhecer e produzir textos empresariais (correio eletrônico, memorandos e relatórios), introduzir as diretrizes para a elaboração de textos objetivos, concisos e claros, sem vícios de linguagem.</p> <br> 
 
@@ -58,7 +65,7 @@
 
 	<p><b>MATEMÁTICA APLICADA:</b> Conheça os conceitos fundamentais de lógica formal, dominando os métodos matemáticos e estatísticos para análise de conjuntos de dados. Saiba quais operações matemáticas devem ser realizadas para tratamento e representação de dados. Além disso, conheça a geração de medidas estatísticas capazes de subsidiar o profissional de informática no entendimento e programação de sistemas que envolvam cálculos. </p> <br> 
 </div>
-		 <center><br><h1>Gestão da Tecnologia da Informação</h1><br></center> 
+		 <center><br><h2>Gestão da Tecnologia da Informação</h2><br></center> 
 <div class="flex-item">	
 	<p><b>COMUNICAÇÃO E EXPRESSÃO:</b> Redija textos com os princípios de coesão e coerência, objetividade, concisão e clareza, dominando as regras gramaticais, localizando erros e corrigindo-os. Saiba reconhecer e produzir textos empresariais (correio eletrônico, memorandos e relatórios), introduzir as diretrizes para a elaboração de textos objetivos, concisos e claros, sem vícios de linguagem.</p> <br> 
 
@@ -72,7 +79,7 @@
 
 	<p><b>MATEMÁTICA APLICADA:</b> Conheça os conceitos fundamentais de lógica formal, dominando os métodos matemáticos e estatísticos para análise de conjuntos de dados. Saiba quais operações matemáticas devem ser realizadas para tratamento e representação de dados. Além disso, conheça a geração de medidas estatísticas capazes de subsidiar o profissional de informática no entendimento e programação de sistemas que envolvam cálculos. </p> <br>
 </div>
-		<center><br><h1>Redes de Computadores</h1><br></center> 
+		<center><br><h2>Redes de Computadores</h2><br></center> 
 <div class="flex-item"> 	
 	<p><b>ADMINISTRAÇÃO DE REDES E SISTEMAS: </b>Administação de Redes e Sistemas</p> <br> 
 
@@ -102,7 +109,7 @@
 
 	<p><b>PROGRAMAÇÃO PARA REDES: </b> Programação para Redes</p> <br> 
 </div>
-		 <center><br><h1>Administração</h1><br></center> 
+		 <center><br><h2>Administração</h2><br></center> 
 <div class="flex-item">	
 	<p><b>COMUNICAÇÃO E EXPRESSÃO:</b> Redija textos com os princípios de coesão e coerência, objetividade, concisão e clareza, dominando as regras gramaticais, localizando erros e corrigindo-os. Saiba reconhecer e produzir textos empresariais (correio eletrônico, memorandos e relatórios), introduzir as diretrizes para a elaboração de textos objetivos, concisos e claros, sem vícios de linguagem. </p> <br> 
 

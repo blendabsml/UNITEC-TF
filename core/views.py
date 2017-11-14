@@ -1,21 +1,17 @@
 from django.shortcuts import render
-
+from django.contrib import admin
 from core.models import Curso
 from core.forms import ContatoForm
 
 # Create your views here.
 def index(request):
-    contexto = {
-        "usuario": "Blenda",
-        "perfil" : "professor",
-        "cursos": Curso.objects.all()
-    }
-    return render(request, "index.html", contexto)
+    return render(request, "index.html")
 
-def contato(request):
+def Contato(request):
     if request.POST:    
         form = ContatoForm(request.POST)
-        form.envia_email()
+        if form.is_valid():
+            form.envia_email()
 
     else:
         form = ContatoForm()
@@ -23,13 +19,27 @@ def contato(request):
     contexto = {
         "form": form
     }
-    return render(request, "contato.html", contexto)
+    return render(request, "Contato.html", contexto)
 
-def index(request):
-    return render(request, "index.html")
+def curso(request):
+    if request.POST:    
+        form = CursoForm(request.POST)
+        if form.is_valid():
+            form.save()
 
-def Contato(request):
-    return render(request, "Contato.html")
+    else:
+        form = CursoForm()
+
+    contexto = {
+        "form": form
+    }
+    return render(request, "curso.html", contexto)
+
+def entrar(request):
+    return render(request, "Login.html")
+
+def sair(request):
+    return render(request, "/admin/logout/")
 
 def ListaCurso(request):
     return render(request, "ListaCursos.html")
@@ -40,15 +50,6 @@ def AreaAluno(request):
 def Disciplinas(request):
     return render(request, "Disciplinas.html")
 
-def esqueciSenha(request):
-    return render(request, "esqueciSenha.html")
-
-def form(request):
-    return render(request, "form.html")
-
-def Login(request):
-    return render(request, "Login.html")
-
 def noticia1(request):
     return render(request, "noticia1.html")
 
@@ -57,12 +58,6 @@ def noticia2(request):
 
 def Noticias(request):
     return render(request, "Noticias.html")
-
-def novaDisciplina(request):
-    return render(request, "novaDisciplina.html")
-
-def novoUsuario(request):
-    return render(request, "novoUsuario.html")
 
 def SobreCurso(request):
     return render(request, "SobreCurso.html")

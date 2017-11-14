@@ -15,23 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from core.views import index, Contato, ListaCurso, AreaAluno, Disciplinas, esqueciSenha, form, Login, noticia1, noticia2, Noticias, novaDisciplina, novoUsuario, SobreCurso
+from core.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
+    url(r'^$', index, name="home"),
     url(r'^index', index),
-    url(r'^Contato', Contato),
-    url(r'^ListaCursos', ListaCurso),   #URL Já configurada
-    url(r'^AreaAluno', AreaAluno),      #URL Já configurada
+    url(r'^Contato', Contato, name="Contato"),
+    url(r'^curso', curso),
+    url(r'^entrar', entrar, name="login"),
+    url(r'^sair', sair, name="logout"),
+    url(r'^ListaCursos', ListaCurso),   
+    url(r'^AreaAluno', AreaAluno),      
     url(r'^Disciplinas', Disciplinas),
-    url(r'^esqueciSenha', esqueciSenha),
-    url(r'^form', form),
-    url(r'^Login', Login),
     url(r'^noticia1', noticia1),
     url(r'^noticia2', noticia2),
     url(r'^Noticias', Noticias),
-    url(r'^novaDisciplina', novaDisciplina),
-    url(r'^novoUsuario', novoUsuario),
     url(r'^SobreCurso', SobreCurso),
 ]

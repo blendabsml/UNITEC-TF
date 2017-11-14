@@ -1,8 +1,8 @@
-create database LMSVERSÃOFINAL
+create database LMSVERSAOFINAL
 
 go
 
-drop database LMSVERSÃOFINAL
+drop database LMSVERSAOFINAL
 
 create table Disciplina (
     id int not null IDENTITY (1,1),

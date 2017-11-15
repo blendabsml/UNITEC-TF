@@ -21,9 +21,8 @@
 						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
 						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
 						{% if not user.is_authenticated %}
-							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
+							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Entrar</h4></a></li>
 						{% else %}
-							{{ user }}
 							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
 						{% endif %}
 					</nav>

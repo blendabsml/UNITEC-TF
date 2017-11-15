@@ -144,5 +144,5 @@ STATIC_URL = '/static/'
 #Login
 AUTH_USER_MODEL = 'core.Usuario'
 
-LOGIN_REDIRECT_URL = "home"
-
+LOGIN_REDIRECT_URL = "/AreaAluno"
+LOGOUT_REDIRECT_URL = "home"

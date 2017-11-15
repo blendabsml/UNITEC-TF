@@ -74,6 +74,17 @@ WSGI_APPLICATION = 'lmsimplacta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#Database Banco padrão Django
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+#Database Banco André
+
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
@@ -88,12 +99,8 @@ DATABASES = {
     },
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+#Database Banco Blenda
+
 
 
 # Password validation
@@ -120,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-# TIME_ZONE = 'Sao_Paulo'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -133,4 +140,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Login
+AUTH_USER_MODEL = 'core.Usuario'
+
+LOGIN_REDIRECT_URL = "home"
 

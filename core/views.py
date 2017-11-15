@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.contrib import admin
+
 from core.models import Curso
-from core.forms import ContatoForm
+from core.forms import ContatoForm, CursoForm
 
 # Create your views here.
 def index(request):
@@ -35,11 +35,6 @@ def curso(request):
     }
     return render(request, "curso.html", contexto)
 
-def entrar(request):
-    return render(request, "Login.html")
-
-def sair(request):
-    return render(request, "/admin/logout/")
 
 def ListaCurso(request):
     return render(request, "ListaCursos.html")

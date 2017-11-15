@@ -54,6 +54,7 @@ class Usuario(AbstractBaseUser):
 
 
 class Curso(models.Model):
+
     sigla = models.CharField(max_length=5)
     nome = models.CharField(max_length=200)
     tipo = models.CharField(max_length=50, blank=True)
@@ -69,8 +70,3 @@ class Aluno(Usuario):
     curso = models.ForeignKey(
         Curso
         )
-
-class Disciplina(models.Model):
-    nome = models.CharField(max_length=200)
-    carga_horaria = models.CharField(max_length=200)
-    descricao = models.TextField(blank=True)

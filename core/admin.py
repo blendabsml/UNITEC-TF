@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import *
+from core.models import Curso, Aluno
 from django import forms
 
 class NovoAlunoForm(forms.ModelForm):

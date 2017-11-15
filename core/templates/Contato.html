@@ -1,90 +1,64 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#007db7" />
-		<meta name="msapplication-navbutton-color" content="#007db7" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="#007db7" />
-		<title>UNITEC | Bem Vindo</title>
-		<link rel ="stylesheet" href="/static/css/estilo.css"/>
+{% extends 'base.html' %}
+
+{% block main %}
+<head>
 		<link rel ="stylesheet" href="/static/css/contato.css"/>
-	</head>
-<body>
-	<header>
-		<div class="menu">
-				<ul>
-					<nav>
-						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
-						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
-						{% if not user.is_authenticated %}
-							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
-						{% else %}
-							{{ user }}
-							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
-						{% endif %}
-					</nav>
-				</ul>
-		</div>
-	</header>
+</head>
 
-	<center class="Fundo"><img class="banner" src="/static/images/banner.png"></center>
-	<center class="corpo-contato"><div class="Form1"><br>	
-	
-	<center > <form>
+<center><div class="Form1"><br>	
+
+<center> <form>
 
 
-    <br>	
-	<legend> <center> CONTATO </center> </legend>
+<br>	
+<legend> <center> CONTATO </center> </legend>
+<br>
 <br> 
 <br> 
-	 Nome: <br>
-	<input type="text" class="CamposForm" placeholder="Digite seu nome"/>
-    
-	<br>
-	<br>
-	Telefone: <br>
-	<input type="text" class="CamposForm" placeholder="Digite seu telefone"/>
-	<br>
-	<br>
-	<label for="input-mail">E-mail: </label> <br>
-	<input type="text" class="CamposForm" placeholder="Digite o email">
-	
-	<br>
-	<br>
+ Nome: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu nome"/>
 
-	Assunto do contato: <br>
-	<select name="assunto" class="CamposForm" >
-		<option>Duvidas</option>
-		<option>Opinião</option>
-		<option>Reclamações</option>
-	</select>
+<br>
+<br>
+Sobrenome: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu sobrenome"/>
+<br>
+<br>
+Telefone: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu telefone"/>
+<br>
+<br>
+<label for="input-mail">E-mail: </label> <br>
+<input type="text" class="CamposForm" placeholder="Digite o email">
 
-	<br>
-	<br>
-	
-	Mensagem:<br>
-	<textarea name="Mensagem" class="CamposForm"  placeholder="Digite aqui..."></textarea>
-	
-	<br>
-	<br>
+<br>
+<br>
 
-	<input class="button1" type="submit" value="Enviar"/>
-	<button class="button1" type="reset">Limpar</button>
+Assunto do contato: <br>
+<select name="assunto" class="CamposForm" >
+	<option>Duvidas</option>
+	<option>Opinião</option>
+	<option>Reclamações</option>
+</select>
+
+<br>
+<br>
+
+Mensagem:<br>
+<textarea name="Mensagem" class="CamposForm"  placeholder="Digite aqui..."></textarea>
+
+<br>
+<br>
+
+<input class="button1" type="submit" value="Enviar"/>
+<button class="button1" type="reset">Limpar</button>
+
+
 
 <br>
 <br>
 </form> </center>
 
-	
-</div></center>
 
-	<footer>
-      <p><strong>Universidade de Tecnologia - Todos os Direitos Reservados &copy; 2017</strong></p>
-    </footer>
-</body> 
-</html>
+</div></center>
+{% endblock main %}

@@ -6,7 +6,7 @@
 	margin-right: auto;
 	margin-top: 2%;
  }
-.CamposForm, select {
+.CamposForm, select, .CampoLogin {
     width: 90%;
     padding: 12px 20px;
     margin: 8px 0;

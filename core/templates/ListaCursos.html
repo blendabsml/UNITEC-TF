@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#007db7" />
-		<meta name="msapplication-navbutton-color" content="#007db7" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="#007db7" />
-		<title>UNITEC | Bem Vindo</title>
-		<link rel ="stylesheet" href="/static/css/estilo.css"/>
-	</head>
-<body>
-	<header>
-		<div class="menu">
-				<ul>
-					<nav>
-						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
-						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
-						{% if not user.is_authenticated %}
-							<li class="menusuperior"><a class="h4" href="/entrar"><h4>Login</h4></a></li>
-						{% else %}
-							{{ user }}
-							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
-						{% endif %}
-					</nav>
-				</ul>
-		</div>
-	</header>
-	
+{% extends 'base.html' %}
+
+{% block main %}
 	<center><img class="banner" src="/static/images/banner.png"></center>
 	
 	<section class="conteudo">
@@ -39,14 +9,14 @@
 				<img src="/static/images/adss.jpg" alt="ANÁLISE E DESENVOLVIMENTO DE SISTEMAS"/>
 			</div>
 			<div class="texto" id="ads">
-				<div class="circle"><i class="fa fa-code fa-4x" aria-hidden="true"></i></div>
+				<div class="circle"></div>
 				<h2>ANALISE E DESENVOLVIMENTO DE SISTEMAS</h2><p>Aprenda a desenvolver e analisar sistemas, utilizando ambientes DevOps linguagens e tecnologias de alta-produtividade e de melhor custo beneficio.</p>
 				<br><a href="ads.html" class="readmore">Saiba mais</a>
 			</div>
 		</div>
 		<div class="curso D">
 			<div class="texto" id="gbd">
-					<div class="circle"><i class="fa fa-database fa-4x" aria-hidden="true"></i></div>
+					<div class="circle"></div>
 					<h2><strong>BANCO DE DADOS<br></strong></h2><p>Aprenda importância da segurança de compartilhamento de dados nas empresas modernas dominando as melhores técnicas e ferramentas de criação e implementação.</p>
 					<br><a href="bd.html" class="readmore">Saiba mais</a>
 			</div>
@@ -59,7 +29,7 @@
 				<img src="/static/images/gti.jpg" alt="SISTEMAS DE INFORMAÇÃO"/>
 			</div>
 			<div class="texto" id="grc">
-				<div class="circle"><i class="fa fa-sitemap fa-4x" aria-hidden="true"></i></div>
+				<div class="circle"></div>
 					<h2><strong>SISTEMAS DE INFORMAÇÃO</strong></h2>
 				<p>Administra o fluxo de informações que circulam por redes de computadores, dentro e fora de uma organização. Ele desenvolve o processamento, os sistemas de armazenamento e de recuperação de dados e disponibiliza esse material para usuários de redes, criando, adaptando e instalando programas para facilitar e organizar a consulta. Monta e gerencia banco de dados e desenha páginas de sites, funcionais e elegantes – tarefa que exige versatilidade e criatividade.</p>
 				<br><a href="redeCom.html" class="readmore">Saiba mais</a>
@@ -67,9 +37,4 @@
 		</div>
 		</div>
 	</section>
-
-	<footer>
-      <p><strong>Universidade de Tecnologia - Todos os Direitos Reservados &copy; 2017</strong></p>
-    </footer>
-</body> 
-</html>
+{% endblock main %}

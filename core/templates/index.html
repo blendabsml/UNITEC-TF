@@ -1,112 +1,75 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#007db7" />
-		<meta name="msapplication-navbutton-color" content="#007db7" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="#007db7" />
-		<title>UNITEC | Bem Vindo</title>
-		<link rel ="stylesheet" href="/static/css/estilo.css"/>
-	</head>
-<body>
-	<header>
-		<div class="menu">
-				<ul>
-					<nav>
-						<li><a href="/index"><img class="home" src="/static/images/Ti.png"></a></li>
-						<li class="menusuperior"><a class="h4" href="/ListaCursos"><h4>Lista de Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Noticias"><h4>Notícias</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Disciplinas"><h4>Disciplinas</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/SobreCurso"><h4>Sobre Cursos</h4></a></li>
-						<li class="menusuperior"><a class="h4" href="/Contato"><h4>Contato</h4></a></li>
-						{% if not user.is_authenticated %}
-							<li class="menusuperior"><a class="h4" href="/admin/login"><h4>Entrar</h4></a></li>
-						{% else %}
-							{{ user }}
-							<li class="menusuperior"><a class="h4" href="/admin/logout"><h4>Sair</h4></a></li>
-						{% endif %}
-					</nav>
-				</ul>
-		</div>
-	</header>
+{% extends 'base.html' %}
 
-	<center class="Fundo"><img class="banner" src="/static/images/banner.png"></center>
-			<section class="Fundo">
-				<div class="sobre">
-				<br>
-				<br>
-				<br>
-					<h2>Sobre a UNITEC</h2>
-					<h4>A Universidade de Tecnologia nasceu da percepção de um Grupo, que desde 1998 é referência em TI, Gestão e Design, para suprir a falta de mão de obra especializada do mercado de tecnologia e oferecer uma formação completa e multidisciplinar aos alunos.</h4>
-					<ul class="actions">
-				<li><a href="#" class="button alt">Saiba mais</a></li>
-			</ul>
+{% block main %}
+				<center><img class="banner" src="/static/images/banner.png"></center>
+				<section class="Fundo">
+					<div class="sobre">
+					<br>
+					<br>
+					<br>
+						<h2>Sobre a UNITEC</h2>
+						<h4>A Universidade de Tecnologia nasceu da percepção de um Grupo, que desde 1998 é referência em TI, Gestão e Design, para suprir a falta de mão de obra especializada do mercado de tecnologia e oferecer uma formação completa e multidisciplinar aos alunos.</h4>
+						<ul class="actions">
+					<li><a href="#" class="button alt">Saiba mais</a></li>
+				</ul>
+					</div>
+					<br>
+					<br>
+					<br>
+				</section>
+					<section class="depoimentos">
+					<div class="sobre depoimentos">
+					<br>
+					<br>
+					<br>
+					<h2>Depoimentos</h2>
+					<div class="wrapper">
+						<div class="one"><p><img class="imagewr" src="/static/images/aluno2.jpg"></p>
+							<h3>Adolfo - Gerente de TI</h3>
+							<p>Hoje sou um profissional graças à UNITEC!</p></div>
+						<div class="two"><p><img class="imagewr" src="/static/images/aluno3.jpg"></p>
+							<h3>Adolfo - Gerente de TI</h3>
+							<p>Hoje sou um profissional graças à UNITEC!</p></div>
+					  </div>
+					<br>
+					<br>
+					<br>
+					</div>
+				</section>
+				<section id="three">
+				<div class="inner">
+				<article>
+				<div class="content">
+				<img class="icon" src="/static/images/fa-laptop.png">
+				<h3>Análise e Desenvolvimento de Sistemas </h3>
+				<h5>O curso forma profissionais conhecidos como Analista de Sistemas ou Desenvolvedor de Sistemas.</h5>
+				<ul class="actions">
+					<li><a href="#" class="button alt">Leia mais</a></li>
+				</ul>
 				</div>
-				<br>
-				<br>
-				<br>
-			</section>
-				<section class="depoimentos">
-				<div class="sobre depoimentos">
-				<br>
-				<br>
-				<br>
-				<h2>Depoimentos</h2>
-				<div class="wrapper">
-					<div class="one"><p><img class="imagewr" src="/static/images/aluno2.jpg"></p>
-						<h3>Adolfo - Gerente de TI</h3>
-						<p>Hoje sou um profissional graças à UNITEC!</p></div>
-					<div class="two"><p><img class="imagewr" src="/static/images/aluno3.jpg"></p>
-						<h3>Adolfo - Gerente de TI</h3>
-						<p>Hoje sou um profissional graças à UNITEC!</p></div>
-				  </div>
-				<br>
-				<br>
-				<br>
+				</article>
+				<article class="dois">
+				<div class="content">
+				<img class="icon" src="/static/images/fa-code.png">
+				<h3>Sistemas da Informação </h3>
+				<h5>Este curso visa formar empreendedores, profissionais e pesquisadores focados na construção, manutenção e evolução dos sistemas computacionais de apoio às organizações. </h5>
+				<ul class="actions">
+					<li><a href="#" class="button alt">Leia mais</a></li>
+				</ul>
 				</div>
-			</section>
-			<section id="three">
-			<div class="inner">
-			<article>
-			<div class="content">
-			<img class="icon" src="/static/images/fa-laptop.png">
-			<h3>Análise e Desenvolvimento de Sistemas </h3>
-			<h5>O curso forma profissionais conhecidos como Analista de Sistemas ou Desenvolvedor de Sistemas.</h5>
-			<br>
-			<ul class="actions">
-				<li><a href="#" class="button alt">Leia mais</a></li>
-			</ul>
-			</div>
-			</article>
-			<article class="dois">
-			<div class="content">
-			<img class="icon" src="/static/images/fa-code.png">
-			<h3>Sistemas da Informação </h3>
-			<h5>Este curso visa formar empreendedores, profissionais e pesquisadores focados na construção, manutenção e evolução dos sistemas computacionais de apoio às organizações. </h5>
-			
-			<ul class="actions">
-				<li><a href="#" class="button alt">Leia mais</a></li>
-			</ul>
-			</div>
-			</article>
-			<article class="tres">
-			<div class="content">
-			<img class="icon" src="/static/images/fa-database.png">
-			<h3>Banco de Dados </h3>
-			<h5>Com o curso de Banco de Dados você será um profissional versátil e com habilidades para atuar com diversas plataformas e estruturas de desenvolvimento e administração de sistemas de banco de dados.</h5>
-			<ul class="actions">
-				<li><a href="#" class="button alt">Leia mais</a></li>
-			</ul>
-			</div>
-			</article>
-			</div>
-			</section>
-			<br>
-			<br>
-			<footer>
-			  <p><strong>Universidade de Tecnologia - Todos os Direitos Reservados &copy; 2017</strong></p>
-			</footer>
-	</body>
-</html>
-		
+				</article>
+				<article class="tres">
+				<div class="content">
+				<img class="icon" src="/static/images/fa-database.png">
+				<h3>Banco de Dados </h3>
+				<h5>Com o curso de Banco de Dados você será um profissional versátil e com habilidades para atuar com diversas plataformas e estruturas de desenvolvimento e administração de sistemas de banco de dados.</h5>
+				<ul class="actions">
+					<li><a href="#" class="button alt">Leia mais</a></li>
+				</ul>
+				</div>
+				</article>
+				</div>
+				</section>
+				<br>
+				<br>
+{% endblock main %}	

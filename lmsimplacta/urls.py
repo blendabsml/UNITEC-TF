@@ -15,21 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.views import login, logout
 from core.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="home"),
-    url(r'^index', index),
-    url(r'^Contato', Contato, name="Contato"),
-    url(r'^curso', curso),
-    url(r'^entrar', entrar, name="login"),
-    url(r'^sair', sair, name="logout"),
-    url(r'^ListaCursos', ListaCurso),   
-    url(r'^AreaAluno', AreaAluno),      
-    url(r'^Disciplinas', Disciplinas),
-    url(r'^noticia1', noticia1),
-    url(r'^noticia2', noticia2),
-    url(r'^Noticias', Noticias),
-    url(r'^SobreCurso', SobreCurso),
+    url(r'^index/', index),
+    url(r'^Contato/', Contato, name="Contato"),
+    url(r'^curso/', curso),
+    url(r'^entrar/', login,{"template_name":"login.html"}, name="login"),
+    url(r'^sair/', logout, name="logout"),
+    url(r'^ListaCursos/', ListaCurso),   
+    url(r'^AreaAluno/', AreaAluno),      
+    url(r'^Disciplinas/', Disciplinas),
+    url(r'^noticia1/', noticia1),
+    url(r'^noticia2/', noticia2),
+    url(r'^Noticias/', Noticias),
+    url(r'^SobreCurso/', SobreCurso),
 ]

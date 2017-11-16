@@ -328,5 +328,5 @@ create table ArquivoResposta (
         references Aluno (id),
 
     constraint uq_ArquivosRes0 unique (nome_disciplina , id_dicipOferta, id_turma, numero_questão, ra_aluno),
-    
+   
 )

@@ -5,12 +5,15 @@
 		<link rel ="stylesheet" href="/static/css/contato.css"/>
 </head>
 <center><div class="Form1"><br>	
-<h2> Login </h2>     
+<h2>Login</h2>   
 <form class="CampoLogin" method="POST">
     {% csrf_token %}
      {{ form.as_p }}
- <input type="submit"  value"entrar"/>
+ <input type="submit" value"entrar"/>
 </form>
+<br/>
+<br/>
+<h2>ou acesse o portal <a href="/admin">ADMIN</a></h2>
 </div></center>
 
 {% endblock main %}

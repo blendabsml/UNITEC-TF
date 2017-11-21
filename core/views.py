@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-from core.models import Curso
+from core.models import *
 from core.forms import ContatoForm, CursoForm
 
 # Create your views here.

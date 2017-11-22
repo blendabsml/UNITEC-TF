@@ -1,11 +1,13 @@
-
-create database LMSVERSAOFINAL
+create database BANCO_FINAL
 
 go
+drop database BANCO_FINAL
+
+USE  BANCO_FINAL
 
 create table Disciplina (
     id int not null IDENTITY (1,1),
-    nome varchar(240),
+    nome varchar(240) not null,
     carga_horaria tinyint,
     teoria decimal(3),
     pratica decimal(3),
@@ -56,9 +58,13 @@ create table Aluno(
     nome varchar (120),
     email varchar (80),
     celular char (11),
-    sigla_curso char (2),
+    sigla_curso INT,
 
     constraint pk_aluno primary key (id),
+    
+    CONSTRAINT fk_sigCurso FOREIGN KEY (sigla_curso)
+        REFERENCES Curso(id)
+
 )
  
 
@@ -67,16 +73,16 @@ create table Aluno(
 
 create table GradeCurricular(
     id int not null IDENTITY (1,1),
-    sigla_curso varchar (5),
+    sigla_curso int,
     ano smallint,
-    semestre char (1),
+    semestre varchar (2),
 
     constraint pk_idGraCr primary key (id),
 
     constraint uq_GradCr UNIQUE (sigla_curso, ano, semestre),
 
     constraint fk_SigCur foreign key (sigla_curso)
-        references Curso (sigla),
+        references Curso (id),
 )
 
 
@@ -148,7 +154,7 @@ create table Turma(
     nome_disciplina int,
     turno varchar(15),
     ra_professor int,
-    id_dicipOferta int not null,
+    id_dicipOferta int,
 
     constraint pk_Turma primary key (id),
 
@@ -245,13 +251,14 @@ create table Questao(
 go
 
 create table ArquivoQuestao(
+    id int not null IDENTITY (1,1),
     arquivo varchar (500) not null, 
     nome_disciplina int,
     id_dicipOferta int,
     id_turma int ,
     numero_questão int not null,
 
-    constraint pk_arquivo primary key (arquivo),
+    constraint pk_arquivo primary key (id),
 
     constraint fk_nomeDiscVII foreign key (nome_disciplina)
         references Disciplina (id),
@@ -266,12 +273,15 @@ create table ArquivoQuestao(
         references Questao (id),
 
     constraint uq_ArquiQues UNIQUE (nome_disciplina, id_dicipOferta, id_turma, numero_questão),
+    
+	constraint uq_ArquiQuesId UNIQUE (arquivo)
 )
 
 go
 
 create table Resposta (
-    ra_aluno int not null IDENTITY (1,1),
+    id int not null IDENTITY (1,1),
+    ra_aluno int,
     nome_disciplina int,
     id_dicipOferta int,
     id_turma int,
@@ -282,10 +292,14 @@ create table Resposta (
     descricao text,
     data_de_envio date,
 
-    constraint pk_Resposta primary key (ra_aluno),
+    constraint pk_Resposta primary key (id),
+
 
     constraint fk_nomeDiscVIII foreign key (nome_disciplina)
         references Disciplina (id),
+
+	constraint fk_ra_aluno1 foreign key (ra_aluno)
+		references Aluno(id),
 
     constraint fk_dicipOferta04 foreign key (id_dicipOferta)
         references DisciplinaOfertada (id),
@@ -302,6 +316,7 @@ create table Resposta (
 go
 
 create table ArquivoResposta (
+    id int not null IDENTITY (1,1),
     arquivo varchar (500) not null,
     nome_disciplina int,
     id_dicipOferta int,
@@ -309,7 +324,9 @@ create table ArquivoResposta (
     numero_questão int not null,
     ra_aluno int,
     
-    constraint pk_arquivoI primary key (arquivo),
+    constraint pk_arquivoI primary key (id),
+
+	constraint uq_ArqResp unique (arquivo),
     
     constraint fk_nomeDiscIX foreign key (nome_disciplina)
         references Disciplina (id),

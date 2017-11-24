@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from core.models import *
 from django import forms
 
+
 class NovoAlunoForm(forms.ModelForm):
     class Meta:	
         model = Aluno    
@@ -48,7 +49,31 @@ class TurmaAdmin(admin.ModelAdmin):
     list_display = ('professor', 'turma_sigla', 'turno',)
 
 class DisciplinaOfertadaAdmin(admin.ModelAdmin):
-    list_display = ('disciplina', 'ano', 'semestre',)    
+    list_display = ('disciplina', 'ano', 'semestre',)
+
+class GradeCurricularAdmin(admin.ModelAdmin):
+    list_display = ('curso', 'ano', 'semestre',)
+
+class PeriodoAdmin(admin.ModelAdmin):
+    list_display = ('gradeCurricular', 'numero',)
+
+class ArquivosFotoAdmin(admin.ModelAdmin):
+    list_display = ('arquivo',)
+
+class CandidatoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'confirmado',)
+
+class QuestaoAdmin(admin.ModelAdmin):
+    list_display = ('turma', 'id', 'descricao')
+
+class ArquivosQuestaoAdmin(admin.ModelAdmin):
+    list_display = ('questao', 'id')
+
+class RespostaAdmin(admin.ModelAdmin):
+    list_display = ('questao', 'aluno', 'descricao')
+
+class ArquivosRespostaAdmin(admin.ModelAdmin):
+    list_display = ('resposta', 'id')
 
 admin.site.register(Aluno, AlunoAdmin)
 admin.site.register(Curso, CursoAdmin)
@@ -56,3 +81,11 @@ admin.site.register(Disciplina, DisciplinaAdmin)
 admin.site.register(Professor, ProfessorAdmin)
 admin.site.register(Turma, TurmaAdmin)
 admin.site.register(DisciplinaOfertada, DisciplinaOfertadaAdmin)
+admin.site.register(GradeCurricular, GradeCurricularAdmin)
+admin.site.register(Periodo, PeriodoAdmin)
+admin.site.register(ArquivosFoto, ArquivosFotoAdmin)
+admin.site.register(Candidato, CandidatoAdmin)
+admin.site.register(Questao, QuestaoAdmin)
+admin.site.register(ArquivosQuestao, ArquivosQuestaoAdmin)
+admin.site.register(Resposta, RespostaAdmin)
+admin.site.register(ArquivosResposta, ArquivosRespostaAdmin)

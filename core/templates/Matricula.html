@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<head>
+		<link rel ="stylesheet" href="/static/css/contato.css"/>
+</head>
+
+<center><div class="Form1"><br>	
+
+<center> <form>
+
+
+<br>	
+<legend> <center> MATRICULA </center> </legend>
+<br>
+<br> 
+<br> 
+ Nome: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu nome"/>
+
+<br>
+<br>
+Sobrenome: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu sobrenome"/>
+<br>
+<br>
+Celular: <br>
+<input type="text" class="CamposForm" placeholder="Digite seu telefone"/>
+<br>
+<br>
+<label for="input-mail">E-mail: </label> <br>
+<input type="text" class="CamposForm" placeholder="Digite o email">
+<br>
+<br>
+Foto: <br>
+<!-- UploadFoto -->
+<br>
+<br>
+
+Ano<br>
+<select name="ano" class="CamposForm" >
+	<option>2016</option>
+	<option>2017</option>
+	<option>2018</option>
+	<option>2019</option>
+	<option>2020</option>
+	
+</select>
+
+<br>
+<br>
+Semestre: <br>
+<select name="semestre" class="CamposForm" >
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	
+	
+</select>
+
+<br>
+<br>
+Curso: <br>
+<select name="CursoForm" class="CamposForm" >
+	<option>Analise e Desenvolvimento de Sistemas</option>
+	<option>Banco de Dados</option>
+	<option>Sistemas de Informação</option>
+
+
+</select>
+<br>
+<br>
+
+Disciplina: <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<input type="checkbox" name="DisciplinaForm" value="">  <br>
+<br>
+<br>
+
+<input class="button1" type="submit" value="Enviar"/>
+<!-- <button class="button1" type="reset">Limpar</button> -->
+
+
+
+<br>
+<br>
+</form> </center>
+
+
+</div></center>
+{% endblock main %}

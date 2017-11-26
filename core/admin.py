@@ -25,10 +25,10 @@ class AlterarAlunoForm(forms.ModelForm):
 class AlunoAdmin(UserAdmin):
     form = AlterarAlunoForm    
     add_form = NovoAlunoForm
-    list_display = ('ra', 'nome', 'curso')
+    list_display = ('ra', 'nome', 'email', 'curso')
     list_filter = ('perfil',)
-    fieldsets = ( (None, {'fields': ('ra', 'nome', 'curso')}),)
-    add_fieldsets = ((None, { 'fields': ('ra', 'nome', 'curso')} ),)
+    fieldsets = ( (None, {'fields': ('ra', 'nome', 'email', 'curso')}),)
+    add_fieldsets = ((None, { 'fields': ('ra', 'nome', 'email', 'curso')} ),)
     search_fields = ('ra',)
     ordering = ('ra',)
     filter_horizontal = ()

@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from core.models import Curso
+from core.models import Curso, Aluno
 
 class CursoForm(forms.ModelForm):
     class Meta:
@@ -18,3 +18,8 @@ class ContatoForm(forms.Form):
         "Email: " + self.cleaned_data["email"] + "\n" +
         "Mensagem: " + self.cleaned_data["mensagem"]
         )
+
+class EmailForm(forms.Form):
+    nome = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    mensagem = forms.CharField(required=True, widget=forms.Textarea)

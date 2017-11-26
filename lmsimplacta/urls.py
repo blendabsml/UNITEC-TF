@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^noticia2/', noticia2),
     url(r'^Noticias/', Noticias),
     url(r'^SobreCurso/', SobreCurso),
+    url(r'^email/', email),
 ]

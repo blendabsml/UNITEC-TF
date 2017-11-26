@@ -53,7 +53,6 @@ class Usuario(AbstractBaseUser):
 
 #Função Curso------------------------------------------------------#
 class Curso(models.Model):
-
     sigla = models.CharField(max_length=5)
     nome = models.CharField(max_length=200)
     tipo = models.CharField(max_length=50, blank=True)
@@ -71,6 +70,7 @@ class Curso(models.Model):
 class Aluno(Usuario):
     curso = models.ForeignKey(to='Curso', related_name="alunos")
     turmas = models.ManyToManyField('Turma', db_table='Matricula', related_name='alunos', blank=True)
+    email = models.EmailField(max_length=254)
 
 #Função Disciplina------------------------------------------------------#
 class Disciplina(models.Model):

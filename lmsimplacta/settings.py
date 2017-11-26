@@ -146,3 +146,13 @@ AUTH_USER_MODEL = 'core.Usuario'
 
 LOGIN_REDIRECT_URL = "/AreaAluno"
 LOGOUT_REDIRECT_URL = "home"
+
+# Email--------------
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Configuração para Gmail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'unitecfaculdade@gmail.com'
+EMAIL_HOST_PASSWORD = '123teste'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

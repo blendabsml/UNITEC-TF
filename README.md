@@ -5,8 +5,8 @@
 <h2>UNITEC - Universidade de Tecnologia</h2>
 <table>
   <tr>
-    <th>Blenda Bomfim</th>
-    <th>1600971</th>
+    <td>Blenda Bomfim</td>
+    <td>1600971</td>
   </tr>
   <tr>
     <td>Andre Tagino</td>

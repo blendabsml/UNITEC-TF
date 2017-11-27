@@ -1,6 +1,10 @@
 
 {% extends 'base.html' %}
 {% block main %}
+<head>
+    <link rel ="stylesheet" href="/static/css/contato.css"/>
+</head>
+
 <section>
 	<div class="Informacoes">
 	<ul class="BarraAluno">
@@ -9,8 +13,8 @@
 	{% else %}
 		<li class="InformacoesAluno"><button class="Logout" onclick="window.location.href='/sair'">Sair</button></li>
 	{% endif %}
-	<li class="InformacoesAluno"><a>Curso: xxxx</a></li>
-	<li class="InformacoesAluno"><a>RA: XXXXXX</a></li>
+	<li class="InformacoesAluno"><a>Curso: {{ user.curso }}</a></li>
+	<li class="InformacoesAluno"><a>RA: {{ user.ra }}</a></li>
 	<li class="InformacoesAluno"><a>Olá, {{ user }}!</a></li>
 	<li class="InformacoesAluno">
 			{% if uploaded_file_url %}
@@ -24,12 +28,12 @@
 	</section>
 	<DIV class="side_bar">
         <ul>
-            <li><a href="aluno.html">Área do Aluno</a></li>
-            <li><a href="boletim.html">Boletim</a></li>
-            <li><a href="smartclass.html">Smart Class</a></li>
-            <li><a href="entregas.html">Entregas</a></li>
+            <li><a href="/AreaAluno">Área do Aluno</a></li>
+            <li><a href="/boletim">Boletim</a></li>
+            <li><a href=/smartclass>Smart Class</a></li>
+            <li><a href="/entregas">Entregas</a></li>
 
-            <li><a href="index.html">Voltar</a></li>
+            <li><a href="/index">Voltar</a></li>
         </ul>
     </DIV>
 	<section class="depoimentos">
@@ -47,6 +51,22 @@
 		<br>
 		</div>
 	</section>
+	<br>
+	<br>
+		<center><div class="Form1"><br>	
+		<h2>Enviar email para o professor.</h2>   
+		<form class="CampoLogin" method="POST">
+			{% csrf_token %}
+			 {{ form.as_p }}
+		<br/>
+		 <input type="submit" value"Enviar"/>
+		</form>
+		<br/>
+		</div></center>
+	<br>
+	<br>
+	<h2>Upload de Arquivo</h2>
+	<br>
 	<form method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<input type="file" name="myfile">

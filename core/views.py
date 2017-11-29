@@ -64,36 +64,36 @@ def ListaCurso(request):
     return render(request, "ListaCursos.html")
 
 def AreaAluno(request):
-    form = EmailForm
-    if request.method == 'POST':
-        form = form(data=request.POST)
-        if form.is_valid():
-            nome = request.POST.get(
-                'nome'
-            , '')
-            email = request.POST.get(
-                'email'
-            , '')
-            mensagem = request.POST.get('mensagem', '')
-            subject = 'Faculdade Unitec'
-            from_email = settings.EMAIL_HOST_USER
-            to_list = [email]
-            send_mail(subject, mensagem,from_email, to_list, fail_silently=True)
-    return render(request, 'AreaAluno.html', {
-    'form': form,
-    })
+    # form = EmailForm
+    # if request.method == 'POST':
+    #     form = form(data=request.POST)
+    #     if form.is_valid():
+    #         nome = request.POST.get(
+    #             'nome'
+    #         , '')
+    #         email = request.POST.get(
+    #             'email'
+    #         , '')
+    #         mensagem = request.POST.get('mensagem', '')
+    #         subject = 'Faculdade Unitec'
+    #         from_email = settings.EMAIL_HOST_USER
+    #         to_list = [email]
+    #         send_mail(subject, mensagem,from_email, to_list, fail_silently=True)
+    # return render(request, 'AreaAluno.html', {
+    # 'form': form,
+    # })
 
 #Função de Upload de imagem
 
-    # if request.method == 'POST' and request.FILES['myfile']:
-        # myfile = request.FILES['myfile']
-        # fs = FileSystemStorage()
-        # filename = fs.save(myfile.name, myfile)
-        # uploaded_file_url = fs.url(filename)
-        # return render(request, 'AreaAluno.html', {
-            # 'uploaded_file_url': uploaded_file_url
-        # })
-    # return render(request, "AreaAluno.html")
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'AreaAluno.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, "AreaAluno.html")
 
 #retornando a renderização da página
 def Disciplinas(request):
@@ -179,3 +179,30 @@ def email(request):
     return render(request, 'email.html', {
     'form': form,
     })
+
+def Mensagens(request):
+    form = EmailForm
+    if request.method == 'POST':
+         form = form(data=request.POST)
+         if form.is_valid():
+             nome = request.POST.get(
+                 'nome'
+             , '')
+             email = request.POST.get(
+                 'email'
+             , '')
+             mensagem = request.POST.get('mensagem', '')
+             subject = 'Faculdade Unitec'
+             from_email = settings.EMAIL_HOST_USER
+             to_list = [email]
+             send_mail(subject, mensagem,from_email, to_list, fail_silently=True)
+    return render(request, 'Mensagens.html', {
+    'form': form,
+     })
+    return render(request, "Mensagens.html")
+
+def boletim(request):
+    return render(request, "boletim.html")
+
+def Matricula(request):
+    return render(request, "Matricula.html")

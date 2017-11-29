@@ -11,17 +11,13 @@
 
 
 <br>	
-<legend> <center> MATRICULA </center> </legend>
+<legend> <center> MATRÍCULA </center> </legend>
 <br>
 <br> 
 <br> 
- Nome: <br>
+ Nome Completo: <br>
 <input type="text" class="CamposForm" placeholder="Digite seu nome"/>
 
-<br>
-<br>
-Sobrenome: <br>
-<input type="text" class="CamposForm" placeholder="Digite seu sobrenome"/>
 <br>
 <br>
 Celular: <br>
@@ -32,8 +28,11 @@ Celular: <br>
 <input type="text" class="CamposForm" placeholder="Digite o email">
 <br>
 <br>
-Foto: <br>
-<!-- UploadFoto -->
+Foto: 
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+  </form><br>
 <br>
 <br>
 

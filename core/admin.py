@@ -30,10 +30,10 @@ class AlterarAlunoForm(forms.ModelForm):
 class AlunoAdmin(UserAdmin):
     form = AlterarAlunoForm    
     add_form = NovoAlunoForm
-    list_display = ('ra', 'nome', 'email', 'curso')
+    list_display = ('ra', 'nome', 'email', 'curso', 'ativo')
     list_filter = ('perfil',)
-    fieldsets = ( (None, {'fields': ('ra', 'nome', 'email', 'curso')}),)
-    add_fieldsets = ((None, { 'fields': ('ra', 'nome', 'email', 'curso')} ),)
+    fieldsets = ( (None, {'fields': ('ra', 'nome', 'email', 'curso', 'ativo')}),)
+    add_fieldsets = ((None, { 'fields': ('ra', 'nome', 'email', 'curso','ativo')} ),)
     search_fields = ('ra',)
     ordering = ('ra',)
     filter_horizontal = ()
@@ -52,6 +52,13 @@ class DisciplinaAdmin(admin.ModelAdmin):
 #Função Professor, e quais campos serão apresentados após criação
 class ProfessorAdmin(admin.ModelAdmin):
     list_display = ('nome', 'ra', 'email',)
+    # def save(self, commit=True):
+    #     user = super(ProfessorAdmin, self).save(commit=False)
+    #     user.set_password('123@mudar')
+    #     user.perfil = 'P'        
+    #     if commit:           
+    #         user.save()        
+    #     return user
 
 #Função Turma, e quais campos serão apresentados após criação
 class TurmaAdmin(admin.ModelAdmin):

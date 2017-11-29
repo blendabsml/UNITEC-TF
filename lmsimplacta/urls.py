@@ -32,7 +32,9 @@ urlpatterns = [
     url(r'^entrar/', login,{"template_name":"login.html"}, name="login"),
     url(r'^sair/', logout, name="logout"),
     url(r'^ListaCursos/', ListaCurso),   
-    url(r'^AreaAluno/', views.AreaAluno),      
+    url(r'^AreaAluno/$', AreaAluno, name='AreaAluno'), 
+    url(r'^AreaAluno/boletim/', boletim, name='boletim'), 
+    url(r'^AreaAluno/Mensagens/', Mensagens, name='Mensagens'),    
     url(r'^Disciplinas/', Disciplinas),
     url(r'^noticia1/', noticia1),
     url(r'^noticia2/', noticia2),
@@ -41,6 +43,7 @@ urlpatterns = [
     url(r'^restrito/$', restrito, name='restrito'),
     url(r'^restrito/(?P<sigla>[A-Z,a-z]+)/questao/(?P<questao_id>[0-9]*)', questao_form, name='questao_form'),
 	url(r'^email/', email),
+    url(r'^Matricula/', Matricula),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

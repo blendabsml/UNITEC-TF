@@ -1,10 +1,6 @@
 
 {% extends 'base.html' %}
 {% block main %}
-<head>
-    <link rel ="stylesheet" href="/static/css/contato.css"/>
-</head>
-{% if user.ativo == 1 %} 
 <section>
 	<div class="Informacoes">
 	<ul class="BarraAluno">
@@ -20,58 +16,52 @@
 				<img class="Foto" src="{{ uploaded_file_url }}">
 			{% else %}
 				<img class="FotoAreaAluno" src="/static/images/aluno.png">
-		  	 {% endif %}
+		   {% endif %}
 	</li>
-	<form method="post" enctype="multipart/form-data">
-		{% csrf_token %}
-		<input type="file" name="myfile">
-		<button type="submit">Upload</button>
-	</form>
 	</ul>
 	</div>
-	</section>
+    </section>
 	<DIV class="side_bar">
         <ul>
             <li><a href="/AreaAluno">Área do Aluno</a></li>
             <li><a href="{% url 'boletim' %}">Boletim</a></li>
             <li><a href="{% url 'Mensagens' %}">Mensagens</a></li>
             <li><a href="/entregas">Entregas</a></li>
-
-            <li><a href="/index">Voltar</a></li>
         </ul>
     </DIV>
-	<section class="depoimentos">
+
+ 	<section class="depoimentos">
 		<div class="sobre depoimentos">
 		<br>
 		<br>
 		<br>
-		<h2>Avisos</h2>
+		<center><h2>Boletim</h2></center>
 		<div class="wrapper">
-			<div class="one"><p><img class="imagewr" src="/static/images/Aviso1.png"></p></div>
-			<div class="two"><p><img class="imagewr" src="/static/images/Aviso2.png"></p></div>
+			 <table>
+                    <tr>
+                        <th colspan="4">Boletim</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">1º Semestre</th>
+                        <th colspan="2">2º Semestre</th>
+                    </tr>
+                    <tr>
+                        <th>Prova 1</th>
+                        <th>Prova 2</th>
+                        <th>Prova 3</th>
+                        <th>Prova 4</th>
+                    </tr>
+                    <tr>
+                        <td>10,0</td>
+                        <td>10,0</td>
+                        <td>10,0</td>
+                        <td>10,0</td>
+                    </tr>
+                </table>
 		  </div>
 		<br>
 		<br>
 		<br>
 		</div>
-	</section>
-	<br>
-	<br>
-	<br>
-	
-	  {% else %}
-<script>                    
-		alert("Por favor, entrar em contato com a secretaria! \n Houve um problema com seu acesso!")  
-		$(alert).onclick( 
-
-		 )
-</script>
-
-<h1><center> Entre em contato com a secretaria da Faculdade</center></h1>
-
-	<li style="list-style: none"><a href="{% url 'Contato'%}" class="button alt"><center>Mandar E-mail</center></a></li>
-	<br>
-	<br>
-	<br>
-{% endif %}
+	</section>	
 {% endblock main %}

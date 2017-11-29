@@ -76,28 +76,28 @@ WSGI_APPLICATION = 'lmsimplacta.wsgi.application'
 
 #Database Banco padrão Django
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 #Database Banco André
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'projeto',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-        },
-    },
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'projeto',
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 13 for SQL Server',
+#         },
+#     },
+# }
 
 #Database Banco Blenda
 

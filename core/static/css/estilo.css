@@ -22,6 +22,10 @@ div.menu li {
     float: left;
 }
 
+.menu .menusuperior{
+	float: right;
+}
+
 li a {
     display: block;
     color: white;
@@ -395,12 +399,11 @@ input[type="submit"].alt, input[type="reset"].alt, input[type="button"].alt, but
 
 .Foto{
 	width: 84px;
-	transform: rotate(90deg);
 }
 
 .Informacoes{
 	background-color: #CDCDCD;
-	width: 660px;
+	width: 498px;
 	float: right;
 }
 
@@ -582,7 +585,22 @@ div.BarraAluno {
 .side_bar {
     float: left;
     width: 17%;
-    height: 491px;
+    height: 390px;
 
     background-color: black;
+}
+
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: center;
+	width: 90%;
+	margin-left: 136px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
 }

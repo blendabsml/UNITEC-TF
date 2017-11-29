@@ -10,10 +10,7 @@
     width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
-    border: 1px solid #922d31;
     box-sizing: border-box;
-	background-color: #e5474b;
-	color: white;
 
 }
 .button1 {
@@ -27,7 +24,7 @@
 @media(max-width: 755px){
 	.Form1 {
 		width: 70%;
-		margin-top: 180px;
+		margin-top: 80px;
 	}
 	
 	.corpo-contato {

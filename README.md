@@ -17,12 +17,16 @@
     <td>1700271</td>
   </tr>
   <tr>
-    <td>Carlos Henrique</td>
-    <td>1601176</td>
+    <td>Jonatas Araújo da Silva</td>
+    <td>1701264</td>
   </tr>
   <tr>
-    <td>Bruno Filidei</td>
-    <td>1600894</td>
+    <td>Victor Enrico</td>
+    <td>1700715</td>
+  </tr>
+  <tr>
+    <td>Victor Souza</td>
+    <td>1700768</td>
   </tr>
 </table>
 </body>
